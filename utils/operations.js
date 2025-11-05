@@ -1,9 +1,11 @@
+// utils/operations.js
+
 export function add(numbers) {
   return numbers.reduce((sum, num) => sum + num, 0);
 }
 
 export function subtract(numbers) {
-  return numbers.slice(1).reduce((diff, num) => diff - num, numbers[0]);
+  return numbers.slice(1).reduce((result, num) => result - num, numbers[0]);
 }
 
 export function multiply(numbers) {
@@ -11,11 +13,11 @@ export function multiply(numbers) {
 }
 
 export function divide(numbers) {
-  return numbers.slice(1).reduce((quotient, num) => {
+  return numbers.slice(1).reduce((result, num) => {
     if (num === 0) {
       console.log("Error: Division by zero");
       process.exit(1);
     }
-    return quotient / num;
+    return result / num;
   }, numbers[0]);
 }
